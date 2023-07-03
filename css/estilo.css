@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Oswald:wght@300&family=Roboto+Condensed&display=swap');
+
+:root {
+    --main-bg-color: #FFFCF6;
+    --menu-color: #FAEED7;
+    --font-color: #832f2f;
+  }
+
+* {
+    font-family: Lora, Arial, sans-serif;
+    background-color: var(--main-bg-color);
+}
+
+nav, ul, a, #logo {
+    background-color: var(--menu-color);
+}
+
+#logo {
+    margin: 8px 50px;
+    width: 155px;
+    height: 79px;
+    transition: transform 0.5s;
+}
+
+#logo:hover {
+    -xpedu-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    list-style: none;
+}
+
+ul {
+    margin: 35px 50px;
+}
+
+a{
+    text-align: right;
+    margin: 10px 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--font-color);
+    font-size: 20px;
+    /* background-color: ;
+    border-radius: 7px; */
+    padding: 0 12px 0 12px;
+}
+
+a:hover {
+    color: #bd3030bc;
+}
