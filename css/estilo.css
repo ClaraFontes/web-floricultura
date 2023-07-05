@@ -4,6 +4,7 @@
     --main-bg-color: #FFFCF6;
     --menu-color: #FAEED7;
     --font-color: #832f2f;
+    --font-color-texts: #453613;
   }
 
 * {
@@ -11,14 +12,15 @@
     background-color: var(--main-bg-color);
 }
 
-nav, ul, a, #logo {
+nav, ul, ul li, a, #logo, .img_welcome_section, .img_welcome_section img, .welcome_section, .title_subtitle, .title_subtitle h1, .title_subtitle h2 { 
     background-color: var(--menu-color);
 }
 
+
 #logo {
-    margin: 8px 50px;
-    width: 155px;
-    height: 79px;
+    margin: 5px 70px;
+    width: 125px;
+    height: 60px;
     transition: transform 0.5s;
 }
 
@@ -28,31 +30,102 @@ nav, ul, a, #logo {
     transform: scale(0.8);
   }
 
-
 nav{
     display: flex;
     justify-content: space-between;
-    margin: 0;
-    list-style: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    box-shadow: -1px 1px 20px #a543164b;
 }
 
 ul {
-    margin: 35px 50px;
+    display: flex;
+    margin: 24px 50px;
+    text-align: left;
 }
 
-a{
-    text-align: right;
-    margin: 10px 5px;
+ul li {
+    list-style: none;
+    display: inline-block;
+    text-align: left;
+}
+
+nav a {
+    margin: 5px;
+    color: var(--font-color);
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 700;
-    color: var(--font-color);
-    font-size: 20px;
-    /* background-color: ;
-    border-radius: 7px; */
-    padding: 0 12px 0 12px;
+    font-size: 17px;
+    border-radius: 4px;
+    padding: 5px 12px;
 }
 
-a:hover {
-    color: #bd3030bc;
+nav a:hover {
+    background-color: #b76c6c1f;
+}
+
+.welcome_section {
+    /* border: 3px solid red; */
+    display: flex;
+    justify-content: space-between;
+    margin: 100px 0;
+    /* height: 250px;
+    width: 100%; */
+    right: 0;
+    left: 0;
+}
+
+.title_subtitle {
+    /* border: 3px solid rgb(43, 255, 0); */
+    margin-left: 10%;
+    /* align-self: center; */
+    width: 555px;
+}
+
+.title_subtitle h1 {
+    font-size: 45px;
+    padding-left: 10%;
+}
+
+.title_subtitle h2 {   
+    padding-left: 10%;
+    font-size: 35px;
+}
+
+.title_subtitle h1, h2 {
+    /* background-color: #832f2f; */
+    color: var(--font-color-texts);
+    align-self: center;
+    /* margin: 0 13%; */
+    width: 500px;
+    text-align: left;
+    font-weight: lighter;
+    margin-right: 200px;
+}
+
+.img_welcome_section {
+    margin-right: 10%;
+    align-self: center;
+}
+
+.img_welcome_section img{
+    width: 300px;
+    height: 150px;
+    transition: transform 0.4s;
+}
+
+.img_welcome_section img:hover {
+    -xpedu-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.8;
+} 
+
+footer {
+    background-color: #453613;
 }
