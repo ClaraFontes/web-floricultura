@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
     const addToCartButtons = document.querySelectorAll(".add-carrinho-btn");
-    const finalizarCompraBtn = document.querySelectorAll(".finalizar-compra-btn")
     const cartItemsList = document.getElementById("itens-carrinho");
     const cartTotal = document.getElementById("carrinho-total");
     const viewCartBtn = document.getElementById("meu-carrinho-btn");
@@ -113,6 +112,12 @@ document.addEventListener("DOMContentLoaded", function () {
         pop_up.style.display = "none";
     });
 
+    function limparCarrinho() {
+        cart.length = 0;
+        renderCartItems();
+        renderCartTotal();
+    }
+
     // FINALIZAR COMPRA
     function findInCart() {
         if (listaProdutos != "") {
@@ -122,12 +127,6 @@ document.addEventListener("DOMContentLoaded", function () {
             carrinhoPopup.style.display = "none";
         }
     }
-
-    finalizarCompraBtn.forEach(button => {
-        button.addEventListener("click", function () {
-            findInCart();
-        });
-    });
       
     function validarFormulario() {
         const nome = document.getElementById('nome').value;
@@ -156,8 +155,10 @@ document.addEventListener("DOMContentLoaded", function () {
   
         alert('Compra finalizada com sucesso!');
         document.getElementById('formulario').reset();
+        carrinhoPopup.style.display = "none";
+        limparCarrinho();
       }
 
-      document.getElementById('finalizar').addEventListener('click', validarFormulario);
+      document.getElementById('finalizar').addEventListener('click', findInCart);
 
 });
