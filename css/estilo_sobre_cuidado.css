@@ -1,0 +1,80 @@
+:root {
+    --main-bg-color: #FFFCF6;
+    --menu-color: #FAEED7;
+    --font-color-texts: #453613;
+}
+
+/* Estilo das Seções das pages Sobre e Cuidados */
+.container_rosa, .container_branco {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    background-color: var(--menu-color);
+    padding: 40px 50px;
+    text-align: left;
+}
+
+.container_branco {
+    padding: 0px 50px;
+    background-color: var(--main-bg-color);
+}
+
+.texto_container {
+    flex: 1;
+    padding: 20px;
+    width: 50px;
+    background-color: transparent;
+}
+
+.texto_container p, .texto_container li{
+    flex: 1;
+    padding: 50px;
+    color: var(--font-color-texts);
+    font-size: 23px;
+    background-color: transparent;
+}
+
+.texto_container li{
+    padding: 0px 0px 7px 0px;
+    font-size: 20px;
+    background-color: transparent;
+}
+
+.texto_container h1 {
+    color: var(--font-color-texts);
+    font-weight: lighter;
+    background-color: transparent;
+}
+
+.texto_container_maior {
+    flex: 1;
+    padding: 5px;
+    width: 10px;
+    background-color: transparent;
+    margin-right: 20px;
+}
+
+.texto_container_maior p{
+    flex: 1;
+    padding: 5px;
+    color: var(--font-color-texts);
+    font-size: 23px;
+    background-color: transparent;
+}
+
+.imagem_container, .imagem_container_cuidados {
+    flex: 1;
+    text-align: center;
+    background-color: transparent;
+}
+
+.imagem_container img {
+    width: 500px;
+    background-color: transparent;
+}
+
+.imagem_container_cuidados img {
+    width: 250px;
+    background-color: transparent;
+    border-radius: 50px;
+}
