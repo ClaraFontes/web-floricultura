@@ -5,6 +5,8 @@
     --menu-color: #FAEED7;
     --font-color: #832f2f;
     --font-color-texts: #453613;
+    --btn-color: #d96b4360;
+    --btn-color-hover: #d96b43a8;
   }
 
 * {
@@ -12,7 +14,11 @@
     background-color: var(--main-bg-color);
 }
 
-nav, ul, ul li, a, #logo, .img_welcome_section, .img_welcome_section img, .welcome_section, .title_subtitle, .title_subtitle h1, .title_subtitle h2 { 
+nav, ul, ul li, a, 
+#logo, .img_welcome_section, 
+.img_welcome_section img, .welcome_section, 
+.title_subtitle, .title_subtitle h1, 
+.title_subtitle h2 { 
     background-color: var(--menu-color);
 }
 
@@ -42,13 +48,13 @@ nav{
     box-shadow: -1px 1px 20px #a543164b;
 }
 
-ul {
+nav ul {
     display: flex;
     margin: 24px 50px;
     text-align: left;
 }
 
-ul li {
+nav ul li {
     list-style: none;
     display: inline-block;
     text-align: left;
@@ -67,6 +73,15 @@ nav a {
 
 nav a:hover {
     background-color: #b76c6c1f;
+}
+
+#meu-carrinho-btn {
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--font-color);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .welcome_section {
@@ -163,6 +178,55 @@ nav a:hover {
     border-radius: 4%;
 }
 
+/* .product-card img {
+    max-width: 40%;
+    height: auto;
+} */
+
+.ver-mais-btn {
+    padding: 5px 10px;
+    background-color: #4536136c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.ver-mais-btn:hover {
+    background-color: #453613d6;
+}
+
+.add-carrinho-btn {
+    padding: 5px 10px;
+    margin: 7px 7px 0px;
+    background-color: var(--btn-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-carrinho-btn:hover {
+    background-color: var(--btn-color-hover);
+}
+
+.add-carrinho-pop_up-btn {
+    padding: 10px 20px;
+    background-color: var(--font-color-texts);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.add-carrinho-pop_up-btn:hover {
+    background-color: #453613d8;
+} 
+
 .card {
     background-color: var(--menu-color);
     width: 12%;
@@ -255,6 +319,197 @@ nav a:hover {
     border-radius: 10px;
     box-shadow: inset 0 0 0 0 #D96B43;      
 }
+
+/* Estilo do pop_up ver mais */
+.pop_up {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.pop_up-conteudo {
+    border-radius: 10px;
+    background-color: var(--menu-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 80%;
+    border-radius: 12px;
+    text-align: center;
+    overflow: auto;
+}
+
+.pop_up-conteudo img {
+    background-color: var(--menu-color);
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.pop_up-conteudo h2, .pop_up-conteudo p {
+    background-color: transparent;
+    margin: 15px;
+}
+
+.pop_up-conteudo p {
+    font-size: 20px;
+}
+
+.close-pop_up {
+    color: #888;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.close-pop_up:hover,
+.close-pop_up:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.pop_up img {
+    width: 250px;
+}
+
+/* Estilo do popup do carrinho */
+.pop_up-carrinho {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.pop_up-carrinho-conteudo {
+    background-color: var(--menu-color);
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close-pop_up-carrinho {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+.close-pop_up-carrinho:hover,
+.close-pop_up-carrinho:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#title_carrinho{
+    background-color: transparent;
+}
+
+#itens-carrinho {
+    background-color: transparent;
+    list-style: disc;
+    padding: 0;
+    margin: 20px;
+}
+
+#itens-carrinho li {
+    margin-bottom: 10px;
+}
+
+.carrinho-total {
+    font-weight: bold;
+    text-align: right;
+    margin-top: 10px;
+    background-color: transparent;
+}
+
+/* Estilo da mensagem de sucesso */
+.mensagem-de-sucesso {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.carrinho {
+    margin-top: 100px;
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.carrinho h2 {
+    margin-bottom: 10px;
+}
+
+.carrinho-total {
+    font-weight: bold;
+}
+
+#itens-carrinho li {
+    margin-bottom: 10px;
+}
+
+/* estilo do formulário no carrinho */
+form {
+    background-color: transparent;
+    display: grid;
+    gap: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+    background-color: transparent;
+  }
+  
+  input {
+    width: 98%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type="button"] {
+    width: 102%;
+    background-color: var(--font-color-texts);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  input[type="button"]:hover {
+    background-color: #453613d8;
+  }
 
 
 #btn:hover {

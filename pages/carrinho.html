@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ana Clara Fontes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="icon" type="image/x-icon" href=" ">
+    <link rel="stylesheet" href="../css/estilo.css">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="../imgs/logo.png" id="logo" alt="logo">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="#">Carrinho</a></li>
+                    <li><a href="cuidados.html">Cuidados</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="carrinho">
+            <h2>Meu Carrinho</h2>
+            <ul id="itens-carrinho">
+                <!-- Itens do carrinho serão renderizados aqui -->
+            </ul>
+            <p class="carrinho-total">Total: R$ 0.00</p>
+            <a href="produtos.html">Voltar para a loja</a>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Recupera os produtos adicionados ao carrinho do armazenamento local
+        const ItensCarrinho = JSON.parse(localStorage.getItem("ItensCarrinho")) || [];
+        
+        // Exibe os produtos adicionados anteriormente no carrinho
+        const ItensCarrinhoList = document.getElementById("itens-carrinho");
+        ItensCarrinho.forEach(item => {
+            const listItem = document.createElement("li");
+            listItem.textContent = `${item.name} - R$ ${item.price.toFixed(2)} - Quantidade: ${item.quantity}`;
+            ItensCarrinhoList.appendChild(listItem);
+        });
+        
+        // Calcula e exibe o total do carrinho
+        const carrinhoTotalElement = document.getElementById("carrinho-total");
+        const carrinhoTotal = ItensCarrinho.reduce((acc, item) => acc + item.price * item.quantity, 0);
+        carrinhoTotalElement.textContent = ` ${carrinhoTotal.toFixed(2)}`;
+    </script>
+
+</body>
+</html>
